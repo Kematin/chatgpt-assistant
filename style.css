@@ -1,0 +1,21 @@
+body {
+    margin:0px;
+}
+
+main {
+    max-width: 1000px;
+    margin: auto;
+}
+
+textarea {
+    resize: none;
+}
+
+#answer {
+    margin-top: 20px;
+    padding-bottom: 10px;
+}
+
+button {
+    margin-top: 2px;
+}
