@@ -7,8 +7,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const clearButton = document.querySelector("#clear");
   clearButton.onclick = () => {
-    const answer = document.querySelector("#answer").querySelector("textarea");
-    answer.innerHTML = "";
+    const question = document.querySelector("#question");
+    const answer = document.querySelector("#answer");
+    question.value = "";
+    answer.value = "";
   };
 });
 
@@ -18,6 +20,6 @@ async function callApi(q) {
   const parse = JSON.stringify(json);
   const content = JSON.parse(parse);
 
-  const answer = document.querySelector("#answer").querySelector("textarea");
-  answer.innerHTML = content.message;
+  const answer = document.querySelector("#answer");
+  answer.value = content.message;
 }
