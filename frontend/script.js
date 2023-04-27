@@ -1,4 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const mainSection = document.querySelector("#mainSection");
+  const settingsSection = document.querySelector("#settingsSection");
+  const title = document.querySelector("#title");
+  console.log(settingsSection);
+  settingsSection.style.display = "none";
+
   const askButton = document.querySelector("#ask");
   askButton.onclick = () => {
     const question = document.querySelector("#question");
@@ -11,6 +17,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const answer = document.querySelector("#answer");
     question.value = "";
     answer.value = "";
+  };
+
+  const settingsButton = document.querySelector("#settings");
+  settingsButton.onclick = () => {
+    mainSection.style.display = "none";
+    settingsSection.style.display = "block";
+    title.innerHTML = "Settings";
+  };
+
+  const mainButton = document.querySelector("#main");
+  mainButton.onclick = () => {
+    mainSection.style.display = "block";
+    settingsSection.style.display = "none";
+    title.innerHTML = "GPT Assistant";
   };
 });
 

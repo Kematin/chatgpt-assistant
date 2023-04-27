@@ -3,6 +3,22 @@ main {
   margin: auto;
 }
 
+#settingsSection {
+  max-width: 1000px;
+  margin: auto;
+}
+
+header {
+  max-width: 1000px;
+  margin: auto;
+}
+
+header button {
+  display: flex;
+  justify-content: space-between;
+  height: 50%;
+}
+
 textarea {
   resize: none;
 }
@@ -52,6 +68,7 @@ textarea {
   background-color: #0069d9;
   border-color: #0062cc;
 }
+
 
 .btn-secondary {
   background-color: #6c757d;

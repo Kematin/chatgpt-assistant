@@ -13,32 +13,44 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main>
-    <h1 class="mb-5">GPT Assistant</h1>
-    
+  <header class="mb-5">
+    <h1 id="title" class="mb-2">GPT Assistant</h1>
+    <button id="main" class="btn btn-primary">Main Section</button>
+    <button id="settings" class="btn btn-secondary">Settings</button>
+  </header>
+  <div id="settingsSection">
     <div class="row">
       <div class="col-md-10 mb-5">
-        <h4>Write your question:</h4>
-        <textarea class="form-control mb-3" id="question" rows="15"></textarea>
-        <div class="d-grid gap-2">
-          <button class="btn btn-primary" id="ask">Give me answer!</button>
-        </div>
-      </div>
-    <div>
-    
-    <br>
-    
-    <div class="row">
-      <div class="col-md-10">
-        <h4>Answer from bot:</h4>
-        <textarea class="form-control mb-4" readonly  id="answer" rows="15"></textarea>
-        <div class="d-grid gap-2">
-          <button class="btn btn-secondary" id="clear">Clear all</button>
-        </div>
+        <p>TODO SETTINGS</p>
       </div>
     </div>
-  </main>
-  
+  </div>
+  <div id="mainSection">
+    <main>
+      <div class="row">
+        <div class="col-md-10 mb-5">
+          <h4>Write your question:</h4>
+          <textarea class="form-control mb-3" id="question" rows="15"></textarea>
+          <div class="d-grid gap-2">
+            <button class="btn btn-primary" id="ask">Give me answer!</button>
+          </div>
+        </div>
+      <div>
+      
+      <br>
+      
+      <div class="row">
+        <div class="col-md-10">
+          <h4>Answer from bot:</h4>
+          <textarea class="form-control mb-4" readonly  id="answer" rows="15"></textarea>
+          <div class="d-grid gap-2">
+            <button class="btn btn-secondary" id="clear">Clear all</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
   
