@@ -82,3 +82,39 @@ textarea {
   background-color: #5a6268;
   border-color: #545b62;
 } 
+
+select {
+  color: white;
+  background-color: #6c757d;
+  border-color: #6c757d;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 7px;
+}
+
+select:hover {
+  background-color: #5a6268;
+  border-color: #545b62;
+} 
+
+label {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #343a40;
+}
+
+#ownRole {
+  color: white;
+  background-color: #6c757d;
+  border-color: #6c757d;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 7px;
+}
+
+#ownRole:hover {
+  background-color: #5a6268;
+  border-color: #545b62;
+}

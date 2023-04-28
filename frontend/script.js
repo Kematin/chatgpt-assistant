@@ -1,16 +1,38 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const mainSection = document.querySelector("#mainSection");
-  const settingsSection = document.querySelector("#settingsSection");
-  const title = document.querySelector("#title");
-  console.log(settingsSection);
-  settingsSection.style.display = "none";
+  displaySection("main");
+  logic();
+});
 
+function logic() {
+  waitApiCall();
+  clearAll();
+  displayMainButton();
+  displaySettingsButton();
+  disableSelectRole();
+}
+
+function disableSelectRole() {
+  const select = document.querySelector("#select-role");
+  const input = document.querySelector("#ownRole");
+  input.addEventListener("input", function () {
+    if (input.value !== "") {
+      select.disabled = true;
+      select.value = "";
+    } else {
+      select.disabled = false;
+    }
+  });
+}
+
+function waitApiCall() {
   const askButton = document.querySelector("#ask");
   askButton.onclick = () => {
     const question = document.querySelector("#question");
     callApi(question.value);
   };
+}
 
+function clearAll() {
   const clearButton = document.querySelector("#clear");
   clearButton.onclick = () => {
     const question = document.querySelector("#question");
@@ -18,21 +40,37 @@ document.addEventListener("DOMContentLoaded", () => {
     question.value = "";
     answer.value = "";
   };
+}
 
+function displaySettingsButton() {
   const settingsButton = document.querySelector("#settings");
   settingsButton.onclick = () => {
-    mainSection.style.display = "none";
-    settingsSection.style.display = "block";
-    title.innerHTML = "Settings";
+    displaySection("settings");
   };
+}
 
+function displayMainButton() {
   const mainButton = document.querySelector("#main");
   mainButton.onclick = () => {
-    mainSection.style.display = "block";
-    settingsSection.style.display = "none";
-    title.innerHTML = "GPT Assistant";
+    displaySection("main");
   };
-});
+}
+
+function displaySection(section) {
+  const mainSection = document.querySelector("#mainSection");
+  const settingsSection = document.querySelector("#settingsSection");
+  const title = document.querySelector("#title");
+
+  if (section === "main") {
+    settingsSection.style.display = "none";
+    mainSection.style.display = "block";
+    title.innerHTML = "GPT Assistant";
+  } else if (section === "settings") {
+    settingsSection.style.display = "block";
+    mainSection.style.display = "none";
+    title.innerHTML = "Settings";
+  }
+}
 
 async function callApi(q) {
   const response = await fetch(`http://localhost:8000/answer?q=${q}`);

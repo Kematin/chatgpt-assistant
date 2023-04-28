@@ -20,8 +20,30 @@
   </header>
   <div id="settingsSection">
     <div class="row">
+      <div class="col-md-10 mb-3">
+        <label for="model">Select Model:</label>
+        <select name="model" id="select-model">
+          <option selected value="gpt-3.5-turbo">gpt-3.5-turbo</option>
+          <option value="gpt-4">gpt-4</option>
+          <option value="gpt-4-32k">gpt-4-32k</option>
+          <option value="bard">bard</option>
+          <option value="phind-gpt-4">phind-gpt-4</option>
+        </select>
+      </div>
+
+      <div class="col-md-10 mb-3">
+        <label for="role">Select Role:</label>
+        <select name="role" id="select-role">
+          <option selected value="code assistant">code assistant</option>
+          <option value="code reviewer">code reviewer</option>
+          <option value="helpful assistant">helpful assistant</option>
+          <option value="english gramma expert">english gramma expert</option>
+          <option value="text improver">text improver</option>
+        </select>
+      </div>
       <div class="col-md-10 mb-5">
-        <p>TODO SETTINGS</p>
+        <label for="role">Create your own role:</label>
+        <input id="ownRole" name="role" type="text" placeholder="Own role">
       </div>
     </div>
   </div>
