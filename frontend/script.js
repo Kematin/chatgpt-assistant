@@ -17,19 +17,10 @@ function disableSelectRole() {
   input.addEventListener("input", function () {
     if (input.value !== "") {
       select.disabled = true;
-      select.value = "";
     } else {
       select.disabled = false;
     }
   });
-}
-
-function waitApiCall() {
-  const askButton = document.querySelector("#ask");
-  askButton.onclick = () => {
-    const question = document.querySelector("#question");
-    callApi(question.value);
-  };
 }
 
 function clearAll() {
@@ -70,6 +61,14 @@ function displaySection(section) {
     mainSection.style.display = "none";
     title.innerHTML = "Settings";
   }
+}
+
+function waitApiCall() {
+  const askButton = document.querySelector("#ask");
+  askButton.onclick = () => {
+    const question = document.querySelector("#question");
+    callApi(question.value);
+  };
 }
 
 async function callApi(q) {

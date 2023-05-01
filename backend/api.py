@@ -16,9 +16,11 @@ app.add_middleware(
 
 
 @app.get("/answer", tags=["root"])
-def gpt_ask(q: str | None = None):
+def gpt_ask(model: str | None = "gpt-3.5-turbo",
+            role: str | None = "code assistant",
+            q: str | None = None):
     if q in ("", None):
         return {"message": "No question for bot!"}
     else:
-        message = get_answer_from_bot(q)
+        message = get_answer_from_bot(q, model, role)
         return {"message": message}
