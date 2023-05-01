@@ -71,8 +71,31 @@ function waitApiCall() {
   };
 }
 
+function getModel() {
+  return "gpt-3.5-turbo";
+}
+
+function getRole() {
+  const input = document.querySelector("#ownRole");
+  let value = input.value;
+  value = value.replace(/\s+/g, "");
+  if (value == "") {
+    const select = document.querySelector("#select-role");
+    const selectedValue = select.value;
+    return selectedValue;
+  }
+  return value;
+}
+
 async function callApi(q) {
-  const response = await fetch(`http://localhost:8000/answer?q=${q}`);
+  const model = getModel();
+  const role = getRole();
+
+  let url = new URL("http://localhost:8000/answer");
+  let params = { q: q, model: model, role: role };
+  url.search = new URLSearchParams(params).toString();
+  const response = await fetch(url);
+
   const json = await response.json();
   const parse = JSON.stringify(json);
   const content = JSON.parse(parse);

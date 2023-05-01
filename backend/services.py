@@ -12,7 +12,10 @@ def get_answer_from_bot(q: str, model: str = "gpt-3.5-turbo",
 
 def call_api(q: str, model: str, role: str):
     openai.api_key = API_KEY
-    messages = [{"role": "user", "content": q}]
+    messages = [
+        {"role": "system", "content": f"You are {role}"},
+        {"role": "user", "content": q}
+    ]
     response = openai.ChatCompletion.create(
         model=model,
         messages=messages,
