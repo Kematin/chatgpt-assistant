@@ -91,7 +91,7 @@ async function callApi(q) {
   const model = getModel();
   const role = getRole();
 
-  let url = new URL("http://localhost:8000/answer");
+  let url = new URL("http://0.0.0.0:8000/answer");
   let params = { q: q, model: model, role: role };
   url.search = new URLSearchParams(params).toString();
   const response = await fetch(url);
