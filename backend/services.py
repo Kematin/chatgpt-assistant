@@ -1,6 +1,6 @@
 import openai
 
-API_KEY = open("key.txt", "r").read()
+API_KEY = open("key.txt", "r").read().strip()
 
 
 def get_answer_from_bot(q: str, model: str = "gpt-3.5-turbo",
